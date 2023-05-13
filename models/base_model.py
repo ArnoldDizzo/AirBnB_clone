@@ -17,9 +17,8 @@ class BaseModel:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
                     self.__dict__[key] = datetime.fromisoformat(value)
-                if key != "__class__":
+                elif key != "__class__":
                     self.__dict__[key] = value
-
         else:
             models.storage.new(self)
 
@@ -39,5 +38,4 @@ class BaseModel:
         dict["__class__"] = self.__class__.__name__
         dict["created_at"] = self.created_at.isoformat()
         dict["updated_at"] = self.updated_at.isoformat()
-
         return dict
