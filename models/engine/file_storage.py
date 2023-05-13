@@ -31,9 +31,9 @@ class FileStorage:
         for key, obj in self.__objects.items():
             object_dict[key] = obj.to_dict()
         """odict = FileStorage.__objects
-        objdict = {obj: odict[obj].to_dict() for obj in odict.keys()}
+        objdict = {obj: odict[obj].to_dict() for obj in odict.keys()}"""
         with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
-            json.dump(objdict, f)"""
+            json.dump(object_dict, f)
 
     def reload(self):
         """Deserialize from file.json"""
