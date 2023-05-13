@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """command line interpreter to test my work"""
 import cmd
 from models.base_model import BaseModel
