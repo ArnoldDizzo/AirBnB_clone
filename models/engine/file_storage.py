@@ -29,12 +29,8 @@ class FileStorage:
         """Serializes __objects to file path file.json"""
         object_dict = {}
         for key, obj in self.__objects.items():
-            object_dict[key] = obj.to_dict()
+            object_dict[key] = obj.to_dict()OA
 
-        with open(FileStorage.__file_path, "w") as f:
-            json.dump(objdict, f)
-
-        
         with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
             json.dump(object_dict, f)
 
