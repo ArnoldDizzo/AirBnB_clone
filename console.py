@@ -26,7 +26,7 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def do_quit(self, line):
-        """quit commmand - used to quit the console"""
+        """quit commmand: - used to quit the console"""
         return True
 
     def do_EOF(self, line):
