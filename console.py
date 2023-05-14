@@ -12,7 +12,7 @@ from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
-    """created the class to use for cmd"""
+    """created the class which is to be used for cmd"""
 
     prompt = '(hbnb) '
     classes = {
