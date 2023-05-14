@@ -10,3 +10,4 @@ You will see te following "(hbnb)" next to this type a command like "create Base
 For more commands type help to see commands available
 
 Florence Kamau <kamaufnjeri2019@gmail.com>
+Mukama Arnold <arrowmen24@gmail.com>
