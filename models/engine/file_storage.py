@@ -11,7 +11,7 @@ from models.city import City
 
 
 class FileStorage:
-    """Class for file storage"""
+    """Class for file storage."""
 
     __file_path = "file.json"
     __objects = {}
