@@ -164,18 +164,22 @@ class HBNBCommand(cmd.Cmd):
                         HBNBCommand.do_show(self, lined)
                     elif k[1][:7] == "destroy":
                         info = k[1]
-                        l_id = info[9: -2]
+                        l_id = info[8: -2]
                         lined = str(args_class) + " " + str(l_id)
                         HBNBCommand.do_destroy(self, lined)
                     elif k[1][:6] == "update":
                         info = k[1]
-                        l_id = info[8: -2]
-                        listd = l_id.split('", "')
-                        lined = str(args_class) + " " + str(listd[0])\
-                            + " " + str(listd[1]) + " " + str(listd[2])
+                        args = info[7: -1]
+                        listd = args.split(', ')
+                        l_id = listd[0][1: -1]
+                        attr = listd[1][1: -1]
+                        if listd[2][0] == '"' and listd[2][-1] == '"':
+                            val = str(listd[2][1: -1])
+                        else:
+                            val = listd[2]
+                        lined = str(args_class) + " " + str(l_id)\
+                            + " " + str(attr) + " " + val
                         HBNBCommand.do_update(self, lined)
-            else:
-                pass
 
     def do_count(self, line):
         """count number of objects of a class"""
