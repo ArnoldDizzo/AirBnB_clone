@@ -140,7 +140,8 @@ class HBNBCommand(cmd.Cmd):
                 type_val = type(g.__class__.__dict__[k[2]])
                 g.__dict__[k[2]] = type_val(k[3])
             else:
-                g.__dict__[k[2]] = k[3]
+                if k[3] in ({str, float, int}):
+                    g.__dict__[k[2]] = k[3]
 
         storage.save()
 
