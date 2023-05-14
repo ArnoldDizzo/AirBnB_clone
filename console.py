@@ -52,7 +52,7 @@ class HBNBCommand(cmd.Cmd):
             print(insta.id)
 
     def do_show(self, line):
-        """Show the string representation of an instance of a class created"""
+        """Show the string representation of an instance of a class created:"""
         k = line.split(" ")
         if len(line) == 0:
             print("** class name missing **")
