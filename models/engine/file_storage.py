@@ -1,5 +1,5 @@
 #!usr/bin/python3
-"""Model for file storage"""
+"""Model for file storage."""
 import json
 from models.base_model import BaseModel
 from models.amenity import Amenity
