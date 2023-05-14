@@ -34,7 +34,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
-        """command for an empty line"""
+        """command for an empty line."""
         pass
 
     def do_create(self, line):
