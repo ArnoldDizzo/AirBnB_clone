@@ -140,7 +140,7 @@ class HBNBCommand(cmd.Cmd):
                 type_val = type(g.__class__.__dict__[k[2]])
                 g.__dict__[k[2]] = type_val(k[3])
             else:
-                    g.__dict__[k[2]] = k[3]
+                g.__dict__[k[2]] = k[3]
 
         storage.save()
 
@@ -155,9 +155,34 @@ class HBNBCommand(cmd.Cmd):
                 if len(k) == 2:
                     if k[1] == "all()":
                         HBNBCommand.do_all(self, args_class)
-
-            else: 
+                    if k[1] == "count()":
+                        HBNBCommand.do_count(self, args_class)
+                    if k[1][:4] == "show":
+                        info = k[1]
+                        l_id = info[6:-2]
+                        lined = str(args_class) + " " + str(l_id)
+                        HBNBCommand.do_show(self, lined)
+                    if k[1][:7] == "destroy":
+                        info = k[1]
+                        l_id = info[9: -2]
+                        lined = str(args_class) + " " + str(l_id)
+                        HBNBCommand.do_destroy(self, lined)
+            else:
                 pass
+
+    def do_count(self, line):
+        """count number of objects of a class"""
+        k = line.split(" ")
+        if len(line) == 0:
+            return
+        else:
+            count = 0
+            if k[0] in HBNBCommand.classes:
+                for key in storage.all().keys():
+                    j = key.split(".")
+                    if k[0] == j[0]:
+                        count += 1
+        print(count)
 
 
 if __name__ == '__main__':
