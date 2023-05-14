@@ -172,14 +172,27 @@ class HBNBCommand(cmd.Cmd):
                         args = info[7: -1]
                         listd = args.split(', ')
                         l_id = listd[0][1: -1]
-                        attr = listd[1][1: -1]
-                        if listd[2][0] == '"' and listd[2][-1] == '"':
-                            val = str(listd[2][1: -1])
+                        if type(listd[1]) == dict and len(listd) == 2:
+                            print(listd)
+                            for key, val in listd[1].items():
+                                lined = str(args_class) + " " + str(l_id) + " "\
+                                    + key + " " + val
+                                HBNBCommand.do_update(self, lined)
                         else:
-                            val = listd[2]
-                        lined = str(args_class) + " " + str(l_id)\
+                            attr = listd[1][1: -1]
+                        
+                            if listd[2][0] == '"' and listd[2][-1] == '"':
+                                val = str(listd[2][1: -1])
+                            else:
+                                val = listd[2]
+                            lined = str(args_class) + " " + str(l_id)\
                             + " " + str(attr) + " " + val
-                        HBNBCommand.do_update(self, lined)
+                            HBNBCommand.do_update(self, lined)
+
+                    else:
+                        pass
+                else:
+                    pass
 
     def do_count(self, line):
         """count number of objects of a class"""
