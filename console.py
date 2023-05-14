@@ -38,7 +38,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, line):
-        """creates a new class instance of basemodel"""
+        """creates a new class instance of basemode.l"""
         line.split(" ")
         if len(line) == 0:
             print("** class name missing **")
