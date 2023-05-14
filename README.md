@@ -7,7 +7,7 @@ To start it write "./console.py" on your terminal in the repository folder which
 
 You will see te following "(hbnb)" next to this type a command like "create BaseModel" then press ENTER to create a class.
 
-For more commands type help to see commands available
+For more commands type help to see commands available.
 
 Florence Kamau <kamaufnjeri2019@gmail.com>
 Mukama Arnold <arrowmen24@gmail.com>
