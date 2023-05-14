@@ -172,21 +172,22 @@ class HBNBCommand(cmd.Cmd):
                         args = info[7: -1]
                         listd = args.split(', ')
                         l_id = listd[0][1: -1]
-                        if type(listd[1]) == dict and len(listd) == 2:
-                            print(listd)
-                            for key, val in listd[1].items():
-                                lined = str(args_class) + " " + str(l_id) + " "\
-                                    + key + " " + val
+                        if listd[1][0] == "{":
+                            dictd = args.split(', {')
+                            dct = '{' + dictd[1]
+                            dicted = eval(dct)
+                            for key, val in dicted.items():
+                                lined = str(args_class) + " " + str(l_id)\
+                                    + " " + str(key) + " " + str(val)
                                 HBNBCommand.do_update(self, lined)
                         else:
                             attr = listd[1][1: -1]
-                        
                             if listd[2][0] == '"' and listd[2][-1] == '"':
                                 val = str(listd[2][1: -1])
                             else:
                                 val = listd[2]
                             lined = str(args_class) + " " + str(l_id)\
-                            + " " + str(attr) + " " + val
+                                + " " + str(attr) + " " + val
                             HBNBCommand.do_update(self, lined)
 
                     else:
