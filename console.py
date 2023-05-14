@@ -155,18 +155,25 @@ class HBNBCommand(cmd.Cmd):
                 if len(k) == 2:
                     if k[1] == "all()":
                         HBNBCommand.do_all(self, args_class)
-                    if k[1] == "count()":
+                    elif k[1] == "count()":
                         HBNBCommand.do_count(self, args_class)
-                    if k[1][:4] == "show":
+                    elif k[1][:4] == "show":
                         info = k[1]
                         l_id = info[6:-2]
                         lined = str(args_class) + " " + str(l_id)
                         HBNBCommand.do_show(self, lined)
-                    if k[1][:7] == "destroy":
+                    elif k[1][:7] == "destroy":
                         info = k[1]
                         l_id = info[9: -2]
                         lined = str(args_class) + " " + str(l_id)
                         HBNBCommand.do_destroy(self, lined)
+                    elif k[1][:6] == "update":
+                        info = k[1]
+                        l_id = info[8: -2]
+                        listd = l_id.split('", "')
+                        lined = str(args_class) + " " + str(listd[0])\
+                            + " " + str(listd[1]) + " " + str(listd[2])
+                        HBNBCommand.do_update(self, lined)
             else:
                 pass
 
