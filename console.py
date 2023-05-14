@@ -30,7 +30,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_EOF(self, line):
-        """EOF command - quits console with ctrl + d"""
+        """EOF command: - quits console with ctrl + d"""
         return True
 
     def emptyline(self):
