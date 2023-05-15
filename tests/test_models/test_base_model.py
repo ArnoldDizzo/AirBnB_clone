@@ -7,6 +7,7 @@ from models import storage
 from models.base_model import BaseModel
 from datetime import datetime
 
+
 class TestBaseModel_insatiation(unittest.TestCase):
     """For instatiation of class test"""
     def test_no_args(self):
@@ -66,11 +67,12 @@ class TestBaseModel_insatiation(unittest.TestCase):
 
     def test_kwargs_with_args(self):
         dt = datetime.today()
-        dt_iso = dt.isoformat()
-        tested = BaseModel("12", id="123", created_at=dt_iso, updated_at=dt_iso)
+        d_iso = dt.isoformat()
+        tested = BaseModel("12", id="123", created_at=d_iso, updated_at=d_iso)
         self.assertEqual(tested.id, "123")
         self.assertEqual(tested.created_at, dt)
         self.assertEqual(tested.updated_at, dt)
+
 
 class test_BaseMode_save(unittest.TestCase):
     """testing the save method in BaseModel class"""
@@ -115,6 +117,7 @@ class test_BaseMode_save(unittest.TestCase):
         update = base.updated_at
         base.save()
         self.assertLess(update, base.updated_at)
+
 
 class test_BaseModel_to_dict(unittest.TestCase):
     """Test the dictionary method in BaseModel class"""
