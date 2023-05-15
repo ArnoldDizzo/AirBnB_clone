@@ -12,7 +12,7 @@ from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
-    """created the class to use for cmd"""
+    """created the class which is to be used for cmd."""
 
     prompt = '(hbnb) '
     classes = {
@@ -26,19 +26,19 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def do_quit(self, line):
-        """quit commmand - used to quit the console"""
+        """quit commmand: - used to quit the console"""
         return True
 
     def do_EOF(self, line):
-        """EOF command - quits console with ctrl + d"""
+        """EOF command: - quits console with ctrl + d"""
         return True
 
     def emptyline(self):
-        """command for an empty line"""
+        """command for an empty line."""
         pass
 
     def do_create(self, line):
-        """creates a new class instance of basemodel"""
+        """creates a new class instance of basemode.l"""
         line.split(" ")
         if len(line) == 0:
             print("** class name missing **")
@@ -52,7 +52,7 @@ class HBNBCommand(cmd.Cmd):
             print(insta.id)
 
     def do_show(self, line):
-        """Show the string representation of an instance of a class created"""
+        """Show the string representation of an instance of a class created:"""
         k = line.split(" ")
         if len(line) == 0:
             print("** class name missing **")

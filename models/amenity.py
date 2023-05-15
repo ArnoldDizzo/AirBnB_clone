@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module on amenity class"""
+"""Module on specifically amenity class"""
 from models.base_model import BaseModel
 
 

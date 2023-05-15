@@ -28,7 +28,7 @@ class BaseModel:
         models.storage.save()
 
     def __str__(self):
-        """Return the str representation of base model"""
+        """Return the str representation of the base model"""
         k = self.__class__.__name__
         return "[{}] ({}) {}".format(k, self.id, self.__dict__)
 
