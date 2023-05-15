@@ -10,6 +10,7 @@ from datetime import datetime
 
 class TestBaseModel_insatiation(unittest.TestCase):
     """For instatiation of class test"""
+
     def test_no_args(self):
         self.assertEqual(BaseModel, type(BaseModel()))
 
@@ -76,6 +77,7 @@ class TestBaseModel_insatiation(unittest.TestCase):
 
 class test_BaseMode_save(unittest.TestCase):
     """testing the save method in BaseModel class"""
+
     @classmethod
     def setUp(self):
         try:
@@ -121,6 +123,7 @@ class test_BaseMode_save(unittest.TestCase):
 
 class test_BaseModel_to_dict(unittest.TestCase):
     """Test the dictionary method in BaseModel class"""
+
     def test_type(self):
         tested = BaseModel()
         self.assertTrue(dict, type(tested.to_dict()))
@@ -145,7 +148,7 @@ class test_BaseModel_to_dict(unittest.TestCase):
     def test_to_dict_with_args(self):
         base = BaseModel()
         with self.assertRaises(TypeError):
-            base.to_dict("N")
+            base.to_dict(None)
 
     def test_dict(self):
         base = BaseModel()
