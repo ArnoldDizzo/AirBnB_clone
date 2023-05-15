@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Test of BaseModel class"""
+import io
 import os
 import unittest
 from models import storage
