@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Test of BaseModel class"""
 import os
-from time import sleep
 import unittest
 from models import storage
 from models.base_model import BaseModel
